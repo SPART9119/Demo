@@ -1,0 +1,36 @@
+name: Birthday Mailer
+
+on:
+  schedule:
+    # 12:01 AM IST = 6:31 PM UTC (previous day)
+#    - cron: "31 18 * * *"
+    - cron: "30 12 * * *"
+
+  workflow_dispatch:
+
+jobs:
+
+  send-birthday-mails:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run Birthday Script
+        env:
+          EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+        run: python send_birthday.py
