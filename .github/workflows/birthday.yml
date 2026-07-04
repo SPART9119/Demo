@@ -2,7 +2,7 @@ name: Birthday Mailer
 
 on:
   schedule:
-    - cron: "30 13 * * *"
+    - cron: "25 13 * * *"
 
   workflow_dispatch:
 
