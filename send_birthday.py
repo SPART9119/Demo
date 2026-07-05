@@ -38,6 +38,9 @@ df = pd.read_csv("birthdays.csv")
 
 server = smtplib.SMTP(SMTP_SERVER, SMTP_PORT)
 server.starttls()
+print(f"EMAIL_ADDRESS = {EMAIL_ADDRESS}")
+print(f"Password length = {len(EMAIL_PASSWORD)}")
+print(f"Password starts with = {EMAIL_PASSWORD[:2]}***")
 server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
 
 emails_sent = 0

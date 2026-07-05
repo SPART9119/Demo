@@ -2,19 +2,19 @@ name: Birthday Mailer
 
 on:
   schedule:
-    - cron: "25 13 * * *"
+    # Runs every day at 12:31 AM IST (7:01 PM UTC)
+    - cron: "1 19 * * *"
 
   workflow_dispatch:
 
 jobs:
   send-birthday-mails:
     runs-on: ubuntu-latest
+    environment: main
 
     steps:
-      - name: Checkout main branch
+      - name: Checkout Repository
         uses: actions/checkout@v4
-        with:
-          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -26,11 +26,26 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Show branch
+      - name: Show Branch
         run: |
           echo "GitHub Ref: $GITHUB_REF"
           echo "GitHub Ref Name: $GITHUB_REF_NAME"
           git branch --show-current
+
+      - name: Verify Environment Variables
+        env:
+          EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+        run: |
+          echo "Email Address: $EMAIL_ADDRESS"
+
+          if [ -z "$EMAIL_PASSWORD" ]; then
+            echo "ERROR: EMAIL_PASSWORD is empty!"
+            exit 1
+          else
+            echo "Password received successfully."
+            echo "Password length: ${#EMAIL_PASSWORD}"
+          fi
 
       - name: Run Birthday Script
         env:
