@@ -2,7 +2,7 @@ import os
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
-from email_templates import random_message
+from email_templates import random_message, random_song
 from logger import logger
 from datetime import datetime
 import pandas as pd
@@ -70,71 +70,261 @@ try:
             try:
 
                 greeting = random_message()
+                song_name, song_url = random_song()
 
                 subject = "🎉 Happy Birthday!"
 
                 html = f"""
 <!DOCTYPE html>
 <html>
-<body style="margin:0;padding:0;background:#f5f5f5;">
+<head>
+<meta charset="UTF-8">
+</head>
 
-<table width="100%" cellpadding="0" cellspacing="0">
-<tr>
-<td align="center">
-
-<table width="600"
-style="
-background:white;
-border-radius:15px;
-padding:40px;
-font-family:Arial;
-box-shadow:0 0 20px rgba(0,0,0,.2);
+<body style="
+margin:0;
+padding:0;
+background:#f3f0ff;
+font-family:Arial, Helvetica, sans-serif;
 ">
 
+<table width="100%" cellpadding="40">
+
 <tr>
+
 <td align="center">
 
-<h1 style="color:#ff4081;">
-🎉 HAPPY BIRTHDAY 🎉
+<table
+width="650"
+cellpadding="0"
+cellspacing="0"
+style="
+background:white;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 20px 60px rgba(0,0,0,.15);
+">
+
+<!-- HEADER -->
+
+<tr>
+
+<td
+align="center"
+style="
+background:linear-gradient(135deg,#ff6ec4,#7873f5);
+padding:45px;
+color:white;
+">
+
+<h1 style="
+margin:0;
+font-size:42px;
+letter-spacing:3px;
+">
+
+🎉 Happy Birthday 🎉
+
 </h1>
 
-<h2>{name}</h2>
+<p style="
+margin-top:15px;
+font-size:20px;
+opacity:.95;
+">
 
-<p style="font-size:20px;">
-🎈🎈🎈
+Today is all about YOU!
+
 </p>
+
+</td>
+
+</tr>
+
+<!-- IMAGE -->
+
+<tr>
+
+<td align="center" style="padding-top:35px;">
 
 <img
-src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84?w=700"
-width="350"
-style="border-radius:15px;">
 
-<p style="font-size:18px;line-height:1.7">
-{greeting}
-</p>
+src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84?w=900"
 
-<h2>🎂🍰🎂</h2>
+width="280"
 
-<p>
-Have an amazing birthday!
-</p>
+style="
+border-radius:20px;
+box-shadow:0 15px 35px rgba(0,0,0,.15);
+">
 
-<hr>
+</td>
 
-<p style="color:gray">
-Best Wishes ❤️
+</tr>
+
+<!-- NAME -->
+
+<tr>
+
+<td align="center">
+
+<h2 style="
+font-size:34px;
+margin-top:35px;
+margin-bottom:10px;
+color:#444;
+">
+
+Dear {name},
+
+</h2>
+
+</td>
+
+</tr>
+
+<!-- MESSAGE -->
+
+<tr>
+
+<td style="padding:0 70px;">
+
+<div style="
+background:#fff8ec;
+border-left:6px solid #ff9800;
+padding:30px;
+border-radius:15px;
+font-size:21px;
+line-height:1.9;
+color:#555;
+font-style:italic;
+">
+
+{greeting.replace(chr(10), "<br>")}
+
+</div>
+
+</td>
+
+</tr>
+
+<!-- QUOTE -->
+
+<tr>
+
+<td align="center" style="padding:45px;">
+
+<p style="
+font-size:18px;
+color:#777;
+line-height:1.8;
+">
+
+May this year bring new adventures,
+beautiful memories,
+and countless reasons to smile.
+
 </p>
 
 </td>
+
+</tr>
+
+<!-- CAKE -->
+
+<tr>
+
+<td align="center">
+
+<div style="font-size:70px;">
+🎂
+</div>
+
+</td>
+
+</tr>
+
+<!-- FOOTER -->
+
+<tr>
+
+<td
+align="center"
+style="
+background:#fafafa;
+padding:35px;
+">
+
+<h2 style="
+margin:0;
+color:#ff4081;
+">
+
+Have the Most Amazing Birthday!
+
+</h2>
+
+<p style="
+color:#666;
+margin-top:20px;
+font-size:17px;
+">
+
+Wishing you happiness today,
+success tomorrow,
+and memories that last forever.
+
+</p>
+
+<hr
+style="
+margin-top:35px;
+margin-bottom:25px;
+border:none;
+border-top:1px solid #ddd;
+width:70%;
+">
+
+<p style="
+font-size:16px;
+color:#999;
+">
+
+Made with ❤️ especially for you
+
+</p>
+
+</td>
+
 </tr>
 
 </table>
 
 </td>
+
 </tr>
+
 </table>
+
+<a href="{song_url}"
+target="_blank"
+style="
+background:#ff4081;
+color:white;
+text-decoration:none;
+padding:16px 35px;
+font-size:18px;
+font-weight:bold;
+border-radius:40px;
+display:inline-block;
+">
+
+🎵 Play "{song_name}"
+
+</a>
 
 </body>
+
 </html>
 """
 
