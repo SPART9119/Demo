@@ -76,34 +76,58 @@ try:
 
                 html = f"""
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday</title>
+
 </head>
 
-<body style="
-margin:0;
-padding:0;
-background:#f3f0ff;
-font-family:Arial, Helvetica, sans-serif;
-">
+<body style="margin:0;padding:0;background:#FFF7FB;">
 
-<table width="100%" cellpadding="40">
+<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#FFF7FB;padding:25px 10px;">
 
 <tr>
 
 <td align="center">
 
-<table
-width="650"
-cellpadding="0"
+<table role="presentation"
+width="100%"
 cellspacing="0"
+cellpadding="0"
 style="
-background:white;
-border-radius:25px;
+max-width:620px;
+background:#ffffff;
+border-radius:24px;
 overflow:hidden;
-box-shadow:0 20px 60px rgba(0,0,0,.15);
+border:1px solid #eeeeee;
+font-family:Arial,Helvetica,sans-serif;
 ">
+
+<!-- TOP RIBBON -->
+
+<tr>
+
+<td
+align="center"
+style="
+background:#ff4f8b;
+color:white;
+padding:12px;
+font-size:15px;
+font-weight:bold;
+letter-spacing:2px;
+">
+
+✨ TODAY IS YOUR DAY ✨
+
+</td>
+
+</tr>
 
 <!-- HEADER -->
 
@@ -112,28 +136,32 @@ box-shadow:0 20px 60px rgba(0,0,0,.15);
 <td
 align="center"
 style="
-background:linear-gradient(135deg,#ff6ec4,#7873f5);
-padding:45px;
+background:#7b61ff;
+padding:45px 20px;
 color:white;
 ">
 
+<div style="font-size:48px;">
+🎈🎂🎉
+</div>
+
 <h1 style="
-margin:0;
-font-size:42px;
-letter-spacing:3px;
+margin:15px 0 5px;
+font-size:38px;
+font-weight:bold;
 ">
 
-🎉 Happy Birthday 🎉
+Happy Birthday!
 
 </h1>
 
 <p style="
-margin-top:15px;
+margin:0;
 font-size:20px;
 opacity:.95;
 ">
 
-Today is all about YOU!
+Celebrating YOU today!
 
 </p>
 
@@ -145,17 +173,17 @@ Today is all about YOU!
 
 <tr>
 
-<td align="center" style="padding-top:35px;">
+<td align="center" style="padding:35px 20px 10px;">
 
 <img
-
-src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84?w=900"
-
-width="280"
-
+src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84?w=1200"
+alt="Birthday Cake"
 style="
+display:block;
+width:90%;
+max-width:340px;
+height:auto;
 border-radius:20px;
-box-shadow:0 15px 35px rgba(0,0,0,.15);
 ">
 
 </td>
@@ -166,18 +194,27 @@ box-shadow:0 15px 35px rgba(0,0,0,.15);
 
 <tr>
 
-<td align="center">
+<td align="center" style="padding:10px 30px;">
 
 <h2 style="
+margin:0;
 font-size:34px;
-margin-top:35px;
-margin-bottom:10px;
-color:#444;
+color:#444444;
 ">
 
 Dear {name},
 
 </h2>
+
+<p style="
+margin-top:12px;
+font-size:18px;
+color:#777777;
+">
+
+Today is all about celebrating the amazing person you are.
+
+</p>
 
 </td>
 
@@ -187,17 +224,18 @@ Dear {name},
 
 <tr>
 
-<td style="padding:0 70px;">
+<td style="padding:15px 28px;">
 
 <div style="
-background:#fff8ec;
-border-left:6px solid #ff9800;
-padding:30px;
-border-radius:15px;
-font-size:21px;
+background:#FFF9F5;
+border:2px dashed #ffb84d;
+border-radius:18px;
+padding:28px;
+font-size:20px;
 line-height:1.9;
-color:#555;
+color:#555555;
 font-style:italic;
+text-align:center;
 ">
 
 {greeting.replace(chr(10), "<br>")}
@@ -208,21 +246,25 @@ font-style:italic;
 
 </tr>
 
-<!-- QUOTE -->
+<!-- PHILOSOPHICAL QUOTE -->
 
 <tr>
 
-<td align="center" style="padding:45px;">
-
-<p style="
-font-size:18px;
-color:#777;
-line-height:1.8;
+<td align="center"
+style="
+padding:35px 40px 20px;
 ">
 
-May this year bring new adventures,
-beautiful memories,
-and countless reasons to smile.
+<p style="
+margin:0;
+font-size:18px;
+line-height:1.8;
+color:#666666;
+">
+
+"Life isn't measured by the number of birthdays we celebrate,
+but by the countless lives we brighten along the way.
+May this new chapter bring you purpose, peace and unforgettable memories."
 
 </p>
 
@@ -244,75 +286,20 @@ and countless reasons to smile.
 
 </tr>
 
-<!-- FOOTER -->
+<!-- MUSIC BUTTON -->
 
 <tr>
 
-<td
-align="center"
-style="
-background:#fafafa;
-padding:35px;
-">
+<td align="center" style="padding:30px;">
 
-<h2 style="
-margin:0;
-color:#ff4081;
-">
-
-Have the Most Amazing Birthday!
-
-</h2>
-
-<p style="
-color:#666;
-margin-top:20px;
-font-size:17px;
-">
-
-Wishing you happiness today,
-success tomorrow,
-and memories that last forever.
-
-</p>
-
-<hr
-style="
-margin-top:35px;
-margin-bottom:25px;
-border:none;
-border-top:1px solid #ddd;
-width:70%;
-">
-
-<p style="
-font-size:16px;
-color:#999;
-">
-
-Made with ❤️ especially for you
-
-</p>
-
-</td>
-
-</tr>
-
-</table>
-
-</td>
-
-</tr>
-
-</table>
-
-<a href="{song_url}"
+<a
+href="{song_url}"
 target="_blank"
 style="
-background:#ff4081;
+background:#ff4f8b;
 color:white;
 text-decoration:none;
-padding:16px 35px;
+padding:16px 34px;
 font-size:18px;
 font-weight:bold;
 border-radius:40px;
@@ -322,6 +309,119 @@ display:inline-block;
 🎵 Play "{song_name}"
 
 </a>
+
+</td>
+
+</tr>
+
+<!-- WISH -->
+
+<tr>
+
+<td align="center"
+style="
+padding:10px 40px 35px;
+">
+
+<p style="
+font-size:18px;
+color:#666666;
+line-height:1.9;
+">
+
+May today surround you with laughter,
+tomorrow reward you with success,
+and every day ahead remind you
+how deeply valued and appreciated you are.
+
+</p>
+
+</td>
+
+</tr>
+
+<!-- DIVIDER -->
+
+<tr>
+
+<td align="center">
+
+<hr style="
+width:80%;
+border:none;
+border-top:1px solid #eeeeee;
+">
+
+</td>
+
+</tr>
+
+<!-- FOOTER -->
+
+<tr>
+
+<td
+align="center"
+style="
+padding:35px 30px 40px;
+background:#fafafa;
+">
+
+<h2 style="
+margin:0;
+font-size:28px;
+color:#ff4f8b;
+">
+
+Have an Incredible Birthday!
+
+</h2>
+
+<p style="
+margin-top:20px;
+font-size:17px;
+line-height:1.8;
+color:#777777;
+">
+
+May your heart stay young,
+your dreams stay bold,
+and your smile continue
+to inspire everyone around you.
+
+</p>
+
+<div style="
+font-size:34px;
+margin-top:25px;
+">
+
+🎈 ✨ 🎁 ❤️ 🎉
+
+</div>
+
+<p style="
+margin-top:30px;
+font-size:15px;
+color:#aaaaaa;
+">
+
+Made with ❤️ especially for you.<br>
+Have a magical year ahead!
+
+</p>
+
+</td>
+
+</tr>
+
+</table>
+
+</td>
+
+</tr>
+
+</table>
 
 </body>
 
