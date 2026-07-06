@@ -814,10 +814,82 @@ def random_message():
     return _available.pop()
 
 birthday_songs = [
-    ("Happy Birthday Song", "https://www.youtube.com/watch?v=90w2RegGf9w"),
-    ("Birthday Celebration", "https://www.youtube.com/watch?v=XXXXX"),
-    ("Piano Birthday", "https://www.youtube.com/watch?v=YYYYY"),
-    ("Instrumental Birthday", "https://www.youtube.com/watch?v=ZZZZZ"),
+
+    (
+        "Happy Birthday To You 🎉",
+        "https://www.youtube.com/watch?v=R0be6mdFTgU"
+    ),
+
+    (
+        "Happy Birthday Song (Classic)",
+        "https://www.youtube.com/watch?v=kgorGhLmeA0"
+    ),
+
+    (
+        "Pharrell Williams - Happy",
+        "https://www.youtube.com/watch?v=ZbZSe6N_BXs"
+    ),
+
+    (
+        "Justin Timberlake - CAN'T STOP THE FEELING!",
+        "https://www.youtube.com/watch?v=ru0K8uYEZWw"
+    ),
+
+    (
+        "Kool & The Gang - Celebration",
+        "https://www.youtube.com/watch?v=3GwjfUFyY6M"
+    ),
+
+    (
+        "Katy Perry - Birthday",
+        "https://www.youtube.com/watch?v=jqYxyd1iSNk"
+    ),
+
+    (
+        "Stevie Wonder - Happy Birthday",
+        "https://www.youtube.com/watch?v=inS9gAgSENE"
+    ),
+
+    (
+        "Maroon 5 - Sugar",
+        "https://www.youtube.com/watch?v=09R8_2nJtjg"
+    ),
+
+    (
+        "Coldplay - A Sky Full of Stars",
+        "https://www.youtube.com/watch?v=VPRjCeoBqrI"
+    ),
+
+    (
+        "OneRepublic - I Lived",
+        "https://www.youtube.com/watch?v=z0rxydSolwU"
+    ),
+
+    (
+        "Imagine Dragons - On Top Of The World",
+        "https://www.youtube.com/watch?v=w5tWYmIOWGk"
+    ),
+
+    (
+        "American Authors - Best Day Of My Life",
+        "https://www.youtube.com/watch?v=Y66j_BUCBMY"
+    ),
+
+    (
+        "Walk Off The Earth - Fire In My Soul",
+        "https://www.youtube.com/watch?v=F9kXstb9FF4"
+    ),
+
+    (
+        "Instrumental Birthday Music",
+        "https://www.youtube.com/results?search_query=happy+birthday+instrumental+piano"
+    ),
+
+    (
+        "Relaxing Piano Birthday Music",
+        "https://www.youtube.com/results?search_query=happy+birthday+piano"
+    ),
+
 ]
 
 def random_song():
